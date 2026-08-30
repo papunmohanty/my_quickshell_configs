@@ -19,12 +19,6 @@ PanelWindow {
   implicitHeight: 33
   color: "transparent"
 
-  // Pill {
-  //   anchors.centerIn: parent
-  //   icon: "nest_clock_farsight_analog"
-  //   label: "10:10"
-  // }
-
   Poller {
     id: clock
     command: "date +%H:%M"
@@ -62,6 +56,8 @@ PanelWindow {
     anchors.leftMargin: 14
     spacing: 8
 
+    Workspaces {}
+
     Pill {
       icon: "music_note"
       maxLabelWidth: 200
@@ -79,7 +75,7 @@ PanelWindow {
       label: clock.value
     }
 
-    Workspaces {}
+    // Workspaces {}
   }
 
   RowLayout {

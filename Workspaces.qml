@@ -18,12 +18,20 @@ Rectangle {
       model: Hyprland.workspaces
 
       Rectangle {
-        implicitWidth: modelData.active ? 11 : 6
+        implicitWidth: modelData.active ? 18 : 6
         implicitHeight: implicitWidth
-        radius: width / 2
+        radius: width / 4  // This will make the radius little rounded
         color: modelData.active ? "transparent" : "#1d3631"
         border.width: modelData.active ? 2 : 0
         border.color: "#3dd1b0"
+
+        Text {
+          text: modelData.name
+          color: modelData.active ? "#3dd1b0": "#040e0d"
+          horizontalAlignment: Text.AlignHCenter
+          verticalAlignment: Text.AlignVCenter
+          anchors.fill: parent
+        }
 
         Behavior on implicitWidth {
           NumberAnimation {
